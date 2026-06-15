@@ -1,0 +1,300 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("assets/Group\ 96.png");
+    background-size: 100vw 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    direction: rtl;
+    font-family: "secular";
+}
+
+@font-face {
+    font-family: "secular";
+    src: url("assets/fonts/galacticondensed-regular-ffc-web.woff");
+}
+.navbar {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 95%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 90vw;
+    transform: translate(-50%, -50%);
+}
+
+
+.button {
+    cursor: pointer;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    touch-action: manipulation;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.button:hover {
+    transform: translateX(-50%) scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+}
+
+.button:active {
+    transform: translateX(-50%) scale(0.95);
+}
+
+
+
+
+.ziv {
+    position: fixed;
+    top: 67%;
+    left: 5vw;
+    transform: translateX(-50%);
+    width: 35vw;
+    max-width: 180px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 100;
+}
+
+/* מצב פתוח */
+.ziv.active {
+    top: 0%;
+    left: 50%;
+    width: 55vw;
+    max-width: 280px;
+    transform: translate(-50%, -50%);
+}
+
+.bookContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page {
+    width: 75vw;
+    height: 70vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.media {
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+}
+
+/* כפתורי ניווט */
+.navBtn {
+    position: absolute;
+    top: 85%;
+
+    width: 40vw;
+
+
+    transform: translateY(-50%);
+
+    cursor: pointer;
+
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+    transition: transform 0.3s ease,
+                opacity 0.3s ease;
+
+    z-index: 10;
+}
+
+.navBtn:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.navBtn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* אחורה - ימין */
+.prevBtn {
+    right: 5%;
+}
+
+/* קדימה - שמאל */
+.nextBtn {
+    left: 5%;
+}
+
+/* כשלא צריך להציג כפתור */
+.hidden {
+    display: none;
+}
+.ziv {
+    position: fixed;
+    bottom: 20px;
+    right: 60px;
+    width: 130px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 100;
+}
+
+.ziv.active {
+    width: 250px;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+}
+
+.speechHint {
+    position: fixed;
+    bottom: 190px;
+    right: 180px;
+    background: rgb(252, 245, 187);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: "secular";
+    animation: float 2s infinite;
+    z-index: 99;
+}
+
+.speechHint::after {
+    content: "";
+    position: absolute;
+    top: 10vh;
+    right: 25px;
+    border: 10px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.024);
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    z-index: 90;
+}
+
+#dialogBox {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.692);
+    border-radius: 20px;
+    padding: 20px;
+    display: none;
+    z-index: 101;
+    font-family: "secular";
+    direction: rtl;
+}
+
+#dialogText {
+    min-height: 80px;
+    line-height: 1.6;
+}
+
+.fish {
+    position: fixed;
+    font-size: 35px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.fish1 {
+    top: 20%;
+    animation: swimRight 20s linear infinite;
+}
+
+.fish2 {
+    top: 50%;
+    animation: swimLeft 18s linear infinite;
+}
+
+.fish3 {
+    top: 75%;
+    animation: swimRight 25s linear infinite;
+}
+
+@keyframes swimRight {
+    from {
+        left: -80px;
+        transform: scaleX(1);
+    }
+    to {
+        left: 110%;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes swimLeft {
+    from {
+        left: 110%;
+        transform: scaleX(-1);
+    }
+    to {
+        left: -80px;
+        transform: scaleX(-1);
+    }
+}
+
+/* .page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* משותף לתמונה ולווידאו */
+.media {
+    width: 90vw;
+    height:30vh;
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    /* אפקט יפה של "כרטיס" */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+    background: white;
+}
+
+/* וידאו קצת יותר מודגש */
+video.media {
+    background: black;
+}
+
+/* במובייל */
+@media (max-width: 768px) {
+    .media {
+        max-width: 80%;
+        max-height: 55vh;
+    }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>יומולדת לזיו 23</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <!-- <img class="title" src="assets/titles/mainTitle.png" alt="icon 1"> -->
+
+  <!-- כפתור אקסל -->
+  <button class="button" onclick="toBook()">
+  <img class="title" src="assets/Group 94.png" alt="icon 1">
+  </button>
+
+<img class="ziv" id="ziv" src="assets/image 71.png" alt="זיו">
+
+<div class="speechHint">לחץ עליי</div>
+
+<div id="overlay"></div>
+
+<div id="dialogBox">
+    <div id="dialogText"></div>
+</div>
+
+<div class="fish fish1">🐠</div>
+<div class="fish fish2">🐟</div>
+<div class="fish fish3">🐡</div>
+</body>
+<script>
+    function toBook() {
+    window.location.href = "form1.html";
+}
+const ziv = document.getElementById("ziv");
+const overlay = document.getElementById("overlay");
+const dialogBox = document.getElementById("dialogBox");
+const dialogText = document.getElementById("dialogText");
+const speechHint = document.querySelector(".speechHint");
+
+let typingInterval;
+
+const text = `לרגל יום הולדתך ה23, רצינו לאחל לך מזל טוב עם ספר תמונות וסרטונים, הכנס ודפדף בין הזכרונות שצברנו יחד. מעריכים מאוד ומאחלים לך יום הולדת שמח! צוות פל"א`;
+
+function typeWriter(message) {
+
+    clearInterval(typingInterval);
+
+    dialogText.textContent = "";
+
+    let i = 0;
+
+    typingInterval = setInterval(() => {
+
+        dialogText.textContent += message[i];
+
+        i++;
+
+        if (i >= message.length) {
+            clearInterval(typingInterval);
+        }
+
+    }, 35);
+}
+
+function openDialog() {
+
+    ziv.classList.add("active");
+
+    overlay.style.display = "block";
+    dialogBox.style.display = "block";
+
+    speechHint.style.display = "none";
+
+    typeWriter(text);
+}
+
+function closeDialog() {
+
+    ziv.classList.remove("active");
+
+    overlay.style.display = "none";
+    dialogBox.style.display = "none";
+
+    speechHint.style.display = "block";
+
+    clearInterval(typingInterval);
+}
+
+ziv.addEventListener("click", (e) => {
+
+    e.stopPropagation();
+
+    if (ziv.classList.contains("active")) {
+        closeDialog();
+    } else {
+        openDialog();
+    }
+});
+
+overlay.addEventListener("click", closeDialog);
+
+dialogBox.addEventListener("click", closeDialog);
+</script>
+</html>
