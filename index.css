@@ -33,7 +33,7 @@ body {
 .button {
     cursor: pointer;
     position: absolute;
-    top: 52%;
+    top: 62%;
     left: 50%;
     width: 20vw;
     transform: translateX(-50%);
@@ -55,7 +55,7 @@ body {
 .title{
       position: absolute;
 
-    width: 50vw;
+    width: 40vw;
 }
 
 
