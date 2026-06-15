@@ -33,9 +33,9 @@ body {
 .button {
     cursor: pointer;
     position: absolute;
-    top: 62%;
+    top: 60%;
     left: 50%;
-    width: 20vw;
+    width: 40vw;
     transform: translateX(-50%);
     -webkit-tap-highlight-color: transparent;
     user-select: none;
@@ -55,7 +55,7 @@ body {
 .title{
       position: absolute;
 
-    width: 40vw;
+    width: 60vw;
 }
 
 
@@ -73,7 +73,7 @@ body {
 
 /* מצב פתוח */
 .ziv.active {
-    top: 0%;
+    top: 10%;
     left: 50%;
     width: 60vw;
     max-width: 280px;
@@ -172,7 +172,7 @@ body {
 
 .speechHint {
     position: fixed;
-    bottom: 190px;
+    bottom: 25%;
     right: 180px;
     background: rgb(252, 245, 187);
     padding: 5px 15px;
