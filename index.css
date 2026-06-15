@@ -33,7 +33,7 @@ body {
 .button {
     cursor: pointer;
     position: absolute;
-    top: 60%;
+    top: 53%;
     left: 50%;
     width: 40vw;
     transform: translateX(-50%);
@@ -55,13 +55,13 @@ body {
 .title{
       position: absolute;
 
-    width: 60vw;
+    width: 50vw;
 }
 
 
 .ziv {
     position: fixed;
-    top: 77%;
+    top: 65%;
     left: 5vw;
     transform: translateX(-50%);
     width: 40vw;
@@ -172,7 +172,7 @@ body {
 
 .speechHint {
     position: fixed;
-    bottom: 25%;
+    bottom: 35%;
     right: 180px;
     background: rgb(252, 245, 187);
     padding: 5px 15px;
